@@ -1,0 +1,5 @@
+# Release binaries are attached to GitHub Releases as assets, never committed —
+# the APK is ~104MB and git rejects files over 100MB.
+*.apk
+*.aab
+*.ipa
