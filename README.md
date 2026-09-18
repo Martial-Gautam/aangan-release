@@ -18,26 +18,31 @@ prompted.
 
 ## Publishing a new version
 
-The APK is ~104 MB, which is over GitHub's 100 MB limit for files committed to
-git. It must be attached as a **release asset**, never committed:
+The APK must be attached as a **release asset**, never committed:
 
 1. In `~/Aangan_app/pubspec.yaml`, raise `version:` — both parts, e.g.
    `1.0.1+2` → `1.0.2+3`. Android only installs an update whose build
    number (after the `+`) is higher than the one on the phone.
-2. `flutter build apk --release` — with `android/key.properties` in place, so
-   the APK carries the Apney release key. An APK built without it carries the
-   debug key and will not install over what people have.
+2. `flutter build apk --release --split-per-abi` — with `android/key.properties`
+   in place, so the APK carries the Apney release key. An APK built without it
+   carries the debug key and will not install over what people have.
+   Three files come out; publish **`app-arm64-v8a-release.apk`** (~40 MB,
+   every phone since ~2017), renamed to `app-release.apk`. The unsplit
+   `flutter build apk` bundles all three architectures into 112 MB that every
+   phone downloads and two-thirds of which none can run.
 3. Edit `latest.json` in this repo: `version` and `build` to match pubspec
    (`build` is the number after the `+`), and a line of `notes`. Commit it.
    The app reads this file to know an update exists and shows an *Update*
    card on Home; a `build` that does not go up means nobody is told.
-4. Attach **both** `build/app/outputs/flutter-apk/app-release.apk` and
+4. Attach **both** the renamed `app-release.apk` and
    `latest.json` to a new GitHub Release: **Releases → Draft a new release →
    tag `v1.0.2` → drag the two files in → Publish.** Or, with the `gh` CLI:
 
 ```bash
+cp ~/Aangan_app/build/app/outputs/flutter-apk/app-arm64-v8a-release.apk \
+   ~/aangan-release/app-release.apk
 gh release create v1.0.2 \
-  ~/Aangan_app/build/app/outputs/flutter-apk/app-release.apk \
+  ~/aangan-release/app-release.apk \
   ~/aangan-release/latest.json \
   --repo Martial-Gautam/aangan-release \
   --title "Apney v1.0.2"
