@@ -1,0 +1,19 @@
+# Render's free plan puts the engine to sleep after 15 idle minutes, and the
+# first canvas load after that waits ~40 s. This keeps it awake during the
+# hours people are: 06:00–24:00 IST, every 10 minutes. Overnight it sleeps,
+# which halves the free-tier hours used; anyone up at 3 am gets one cold start
+# and the app's on-phone fallback.
+#
+# GitHub schedules run in UTC, and IST is UTC+5:30 — so 06:00–23:59 IST is
+# 00:30–18:29 UTC, rounded here to 00:00–18:59 UTC. GitHub also runs cron a
+# few minutes late under load; the 10-minute pitch leaves room for that.
+name: keep the engine warm
+on:
+  schedule:
+    - cron: "*/10 0-18 * * *"
+  workflow_dispatch:
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - run: curl -sf --max-time 60 https://aangan-engine.onrender.com/healthz
