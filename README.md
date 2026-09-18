@@ -27,19 +27,24 @@ git. It must be attached as a **release asset**, never committed:
 2. `flutter build apk --release` — with `android/key.properties` in place, so
    the APK carries the Apney release key. An APK built without it carries the
    debug key and will not install over what people have.
-3. Attach `build/app/outputs/flutter-apk/app-release.apk` to a new GitHub
-   Release: **Releases → Draft a new release → tag `v1.0.2` → drag the file in
-   → Publish.** Or, with the `gh` CLI:
+3. Edit `latest.json` in this repo: `version` and `build` to match pubspec
+   (`build` is the number after the `+`), and a line of `notes`. Commit it.
+   The app reads this file to know an update exists and shows an *Update*
+   card on Home; a `build` that does not go up means nobody is told.
+4. Attach **both** `build/app/outputs/flutter-apk/app-release.apk` and
+   `latest.json` to a new GitHub Release: **Releases → Draft a new release →
+   tag `v1.0.2` → drag the two files in → Publish.** Or, with the `gh` CLI:
 
 ```bash
 gh release create v1.0.2 \
   ~/Aangan_app/build/app/outputs/flutter-apk/app-release.apk \
+  ~/aangan-release/latest.json \
   --repo Martial-Gautam/aangan-release \
   --title "Apney v1.0.2"
 ```
 
-Keep the asset filename as `app-release.apk` — the website's download link
-depends on it.
+Keep the asset filenames as `app-release.apk` and `latest.json` — the
+website's download link and the app's update check depend on them.
 
 The release key (`apney-release.jks`) and its password are the one thing that
 cannot be recreated: lose them and no future version can install over the
