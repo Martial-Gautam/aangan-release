@@ -23,8 +23,9 @@ The APK must be attached as a **release asset**, never committed:
 1. In `~/Aangan_app/pubspec.yaml`, raise `version:` — both parts, e.g.
    `1.0.1+2` → `1.0.2+3`. Android only installs an update whose build
    number (after the `+`) is higher than the one on the phone.
-2. `flutter build apk --release --split-per-abi` — with `android/key.properties`
-   in place, so the APK carries the Apney release key. An APK built without it
+2. `./release.sh` in `~/Aangan_app` — it builds with `android/key.properties`
+   (the release key) and `.release.env` (the crash-reporting DSN), and refuses
+   to build without the key. An APK built without it
    carries the debug key and will not install over what people have.
    Three files come out; publish **`app-arm64-v8a-release.apk`** (~40 MB,
    every phone since ~2017), renamed to `app-release.apk`. The unsplit
