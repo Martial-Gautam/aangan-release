@@ -32,9 +32,13 @@ The APK must be attached as a **release asset**, never committed:
    `flutter build apk` bundles all three architectures into 112 MB that every
    phone downloads and two-thirds of which none can run.
 3. Edit `latest.json` in this repo: `version` and `build` to match pubspec
-   (`build` is the number after the `+`), and a line of `notes`. Commit it.
-   The app reads this file to know an update exists and shows an *Update*
-   card on Home; a `build` that does not go up means nobody is told.
+   (`build` is the number after the `+`), the exact `url` of the APK asset
+   on the release you are about to make (the tag and the file name must
+   match what you upload — `releases/download/v2.0.3/apney_v2.0.3.apk`),
+   and a line of `notes`. Commit it. The app reads this file to know an
+   update exists and shows an *Update* card on Home; a `build` that does
+   not go up means nobody is told, and a `url` that does not match the
+   asset means the Update button opens a 404.
 4. Attach **both** the renamed `app-release.apk` and
    `latest.json` to a new GitHub Release: **Releases → Draft a new release →
    tag `v1.0.2` → drag the two files in → Publish.** Or, with the `gh` CLI:

@@ -1,6 +1,6 @@
 {
-  "version": "1.0.2",
-  "build": 3,
-  "url": "https://github.com/Martial-Gautam/aangan-release/releases/latest/download/app-release.apk",
-  "notes": "Aangan is now Apney. See which relatives are near you from your profile."
+  "version": "2.0.3",
+  "build": 4,
+  "url": "https://github.com/Martial-Gautam/aangan-release/releases/download/v2.0.3/apney_v2.0.3.apk",
+  "notes": "Aangan is now Apney. Relatives around you from your profile, a redrawn Home and nav, and invitations that carry the download link."
 }
