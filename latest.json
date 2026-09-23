@@ -1,6 +1,6 @@
 {
-  "version": "2.3.1",
-  "build": 2009,
-  "url": "https://github.com/Martial-Gautam/aangan-release/releases/download/v2.3.1/apney_android_v2.3.1.apk",
-  "notes": "An invite can now name the person it is for, so a forwarded link no longer lets the first person who opens it into your family."
+  "version": "2.3.2",
+  "build": 2010,
+  "url": "https://github.com/Martial-Gautam/aangan-release/releases/download/v2.3.2/apney_android_v2.3.2.apk",
+  "notes": "The update card now appears when there is one: a check that gets no answer waits ten minutes instead of six hours."
 }
