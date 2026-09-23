@@ -1,6 +1,6 @@
 {
-  "version": "2.3.0",
-  "build": 2008,
-  "url": "https://github.com/Martial-Gautam/aangan-release/releases/download/v2.3.0/apney_android_v2.3.0.apk",
-  "notes": "Two families who wrote down the same people are now introduced, and join if both agree. Invite a cousin by relation instead of by details. A relation that says the gender now fills it in."
+  "version": "2.3.1",
+  "build": 2009,
+  "url": "https://github.com/Martial-Gautam/aangan-release/releases/download/v2.3.1/apney_android_v2.3.1.apk",
+  "notes": "An invite can now name the person it is for, so a forwarded link no longer lets the first person who opens it into your family."
 }
