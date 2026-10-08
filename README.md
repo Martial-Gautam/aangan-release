@@ -31,8 +31,10 @@ The APK must be attached as a **release asset**, never committed:
    every phone since ~2017), renamed to `app-release.apk`. The unsplit
    `flutter build apk` bundles all three architectures into 112 MB that every
    phone downloads and two-thirds of which none can run.
-3. Edit `latest.json` in this repo: `version` and `build` to match pubspec
-   (`build` is the number after the `+`), the exact `url` of the APK asset
+3. Edit `latest.json` in this repo: `version` and `build` to match the APK's
+   `versionName` and `versionCode`. For the ARM64 split, `versionCode` is 2000
+   plus the pubspec build number (`2.6.1+2050` produces build `4050`). Verify
+   these values with `aapt2 dump badging`. Set the exact `url` of the APK asset
    on the release you are about to make (the tag and the file name must
    match what you upload — `releases/download/v2.0.3/apney_v2.0.3.apk`),
    and a line of `notes`. Commit it. The app reads this file to know an
@@ -55,6 +57,10 @@ gh release create v1.0.2 \
 
 Keep the asset filenames as `app-release.apk` and `latest.json` — the
 website's download link and the app's update check depend on them.
+
+A versioned APK such as `apney_android_v2.6.1.apk` can also be attached and used
+in `latest.json`. Keep `app-release.apk` as an identical copy so the stable
+website download link continues to work.
 
 The release key (`apney-release.jks`) and its password are the one thing that
 cannot be recreated: lose them and no future version can install over the

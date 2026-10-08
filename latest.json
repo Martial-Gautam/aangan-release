@@ -1,6 +1,6 @@
 {
-  "version": "2.6.0",
-  "build": 4046,
-  "url": "https://github.com/Martial-Gautam/aangan-release/releases/download/v2.6.0/apney_android_v2.6.0.apk",
-  "notes": "Bhuchki gets relations right, knows birthdays and events, and can add, call, wave and post for you."
+  "version": "2.6.1",
+  "build": 4050,
+  "url": "https://github.com/Martial-Gautam/aangan-release/releases/download/v2.6.1/apney_android_v2.6.1.apk",
+  "notes": "Message requests and Restrict, improved message delivery and ticks, personal Map positions, clearer relationship paths and full-screen profile photos. Chat and Discuss keep their familiar layout."
 }
