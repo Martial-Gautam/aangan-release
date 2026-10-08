@@ -1,6 +1,6 @@
 {
-  "version": "2.6.1",
-  "build": 4050,
-  "url": "https://github.com/Martial-Gautam/aangan-release/releases/download/v2.6.1/apney_android_v2.6.1.apk",
-  "notes": "Message requests and Restrict, improved message delivery and ticks, personal Map positions, clearer relationship paths and full-screen profile photos. Chat and Discuss keep their familiar layout."
+  "version": "2.6.2",
+  "build": 4051,
+  "url": "https://github.com/Martial-Gautam/aangan-release/releases/download/v2.6.2/apney_android_v2.6.2.apk",
+  "notes": "Improved extended-family relationship names and viewer-relative unnamed profiles. Chat and Discuss retain two tabs with a separate Requests button. Includes the Bhuchki availability fix."
 }
