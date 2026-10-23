@@ -1,6 +1,6 @@
 {
-  "version": "2.6.2",
-  "build": 4051,
-  "url": "https://github.com/Martial-Gautam/aangan-release/releases/download/v2.6.2/apney_android_v2.6.2.apk",
-  "notes": "Improved extended-family relationship names and viewer-relative unnamed profiles. Chat and Discuss retain two tabs with a separate Requests button. Includes the Bhuchki availability fix."
+  "version": "3.0.0",
+  "build": 8070,
+  "url": "https://github.com/Martial-Gautam/aangan-release/releases/download/v3.0.0/apney_android_v3.0.0.apk",
+  "notes": "A major update: family accounts with PINs, QR and contact adding, automatic merging of the same relative, Important dates, event invite links, and a cleaner look throughout."
 }
